@@ -2,9 +2,11 @@
 
 Recipe Seeker is a React-based web application for browsing and viewing recipes. Users can search for recipes, view detailed instructions, ingredients, and watch related cooking videos.
 
-The app will also have a randomizer to help a user choose a recipe without having to browse all the available choices.
+The app also has a randomizer to help a user choose a recipe without having to browse all the available choices.
 
-The app was created as part of my thesis to practice modern web development using React and Tailwind.
+The app was first created as part of my thesis to practice modern web development using React and Tailwind.
+
+NOTE! This is version 2 of the app. Original thesis version can be found here: https://github.com/AlinaLokkinen/recipeseeker.
 
 ## Features
 
@@ -19,8 +21,8 @@ The app was created as part of my thesis to practice modern web development usin
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/alinaLokkinen/recipeseeker.git
-   cd recipeseeker
+   git clone https://github.com/alinaLokkinen/recipeseeker-2.git
+   cd recipeseeker-2
    ```
 
 2. Install dependencies:
