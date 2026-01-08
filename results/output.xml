@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.10.6 on win32)" generated="2026-01-08T12:08:35.035715" rpa="false" schemaversion="5">
+<suite id="s1" name="Recipe-Seeker-2" source="C:\Users\35845\Desktop\recipe-seeker-2">
+<suite id="s1-s1" name="Tests" source="C:\Users\35845\Desktop\recipe-seeker-2\tests">
+<suite id="s1-s1-s1" name="Frontpage" source="C:\Users\35845\Desktop\recipe-seeker-2\tests\frontpage.robot">
+<test id="s1-s1-s1-t1" name="Check For Buttons" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-08T12:08:35.360719" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>url=http://localhost:5173/</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-08T12:08:35.359720" elapsed="1.338752"/>
+</kw>
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2026-01-08T12:08:36.729473" level="INFO">Current page contains button 'RANDOM'.</msg>
+<arg>RANDOM</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-08T12:08:36.699473" elapsed="0.031000"/>
+</kw>
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2026-01-08T12:08:36.755474" level="INFO">Current page contains button 'BROWSE'.</msg>
+<arg>BROWSE</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-08T12:08:36.731473" elapsed="0.025002"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-08T12:08:36.756475" elapsed="2.126424"/>
+</kw>
+<status status="PASS" start="2026-01-08T12:08:35.353721" elapsed="3.529178"/>
+</test>
+<status status="PASS" start="2026-01-08T12:08:35.102714" elapsed="3.788188"/>
+</suite>
+<status status="PASS" start="2026-01-08T12:08:35.096716" elapsed="3.804184"/>
+</suite>
+<status status="PASS" start="2026-01-08T12:08:35.042715" elapsed="3.867185"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Recipe-Seeker-2" id="s1" pass="1" fail="0" skip="0">Recipe-Seeker-2</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Recipe-Seeker-2.Tests</stat>
+<stat name="Frontpage" id="s1-s1-s1" pass="1" fail="0" skip="0">Recipe-Seeker-2.Tests.Frontpage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
