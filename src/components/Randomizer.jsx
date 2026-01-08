@@ -54,6 +54,7 @@ const Randomizer = () => {
 
         {categories && (
           <select
+            id="categoryDropdown"
             className="text-center self-center w-1/3 mb-10 mt-5"
             value={chosenCategory}
             onChange={(e) => setChosenCategory(e.target.value)}
@@ -64,6 +65,7 @@ const Randomizer = () => {
           </select>
         )}
         <button
+          id="randomizerButton"
           className="bg-stone-800 text-white rounded-4xl lg:h-18 self-center text-md lg:text-lg font-lexend text-center px-6"
           onClick={getRandomRecipe}
         >
