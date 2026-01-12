@@ -39,3 +39,20 @@ Page contains image
     Wait Until Page Contains    Ingredients
     Page Should Contain Image    img1
     Close Browser
+
+Page contains list of ingredients
+    Open Browser    ${url}    ${browser}
+    Wait Until Page Contains    Beef recipes
+    Click Button    locator=r1
+    Wait Until Page Contains    Ingredients
+    Page Should Contain Element    ingredientList
+    Close Browser
+
+Page should contain instructions
+    Open Browser    ${url}    ${browser}
+    Wait Until Page Contains    Beef recipes
+    Click Button    locator=r1
+    Wait Until Page Contains    Instructions
+    Page Should Contain Element    recipeInstructions
+    Close Browser
+

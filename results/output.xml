@@ -1,60 +1,645 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.10.6 on win32)" generated="2026-01-12T11:47:05.953064" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.10.6 on win32)" generated="2026-01-12T12:05:06.834269" rpa="false" schemaversion="5">
 <suite id="s1" name="Recipe-Seeker-2" source="C:\Users\35845\Desktop\recipe-seeker-2">
 <suite id="s1-s1" name="Tests" source="C:\Users\35845\Desktop\recipe-seeker-2\tests">
-<suite id="s1-s1-s1" name="Recipe" source="C:\Users\35845\Desktop\recipe-seeker-2\tests\recipe.robot">
-<test id="s1-s1-s1-t1" name="Page contains image" line="35">
+<suite id="s1-s1-s1" name="Browse" source="C:\Users\35845\Desktop\recipe-seeker-2\tests\browse.robot">
+<test id="s1-s1-s1-t1" name="Page opens" line="9">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-12T11:47:06.372066" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories/Beef'.</msg>
+<msg time="2026-01-12T12:05:07.228428" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-12T11:47:06.372066" elapsed="1.357067"/>
+<status status="PASS" start="2026-01-12T12:05:07.227431" elapsed="1.342589"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Browse recipes by category</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:08.571019" elapsed="0.224000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:08.796020" elapsed="2.118351"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:07.211427" elapsed="3.702944"/>
+</test>
+<test id="s1-s1-s1-t2" name="Page contains list of categories" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:10.942375" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:10.942375" elapsed="1.345075"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Browse recipes by category</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:12.287450" elapsed="0.225000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:12.521448" level="INFO">Current page contains element 'categoryList'.</msg>
+<arg>locator=categoryList</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:12.513449" elapsed="0.009002"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:12.523452" elapsed="2.113976"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:10.921375" elapsed="3.716053"/>
+</test>
+<test id="s1-s1-s1-t3" name="List of recipes opens when category is pressed" line="20">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:14.659430" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:14.659430" elapsed="1.256019"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Browse recipes by category</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:15.916447" elapsed="0.229091"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:16.146540" level="INFO">Clicking button 'Beef'.</msg>
+<arg>Beef</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:16.146540" elapsed="0.064999"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Beef recipes</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-01-12T11:47:07.730132" elapsed="0.228001"/>
+<status status="PASS" start="2026-01-12T12:05:16.211539" elapsed="0.258000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:16.469539" elapsed="2.131934"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:14.644429" elapsed="3.957044"/>
+</test>
+<status status="PASS" start="2026-01-12T12:05:06.974427" elapsed="11.642050"/>
+</suite>
+<suite id="s1-s1-s2" name="Frontpage" source="C:\Users\35845\Desktop\recipe-seeker-2\tests\frontpage.robot">
+<test id="s1-s1-s2-t1" name="Open Front Page" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:18.643479" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:18.643479" elapsed="1.269355"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:19.926833" level="INFO">Current page contains text 'Recipe Seeker'.</msg>
+<arg>Recipe Seeker</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-12T12:05:19.912834" elapsed="0.013999"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:19.927832" elapsed="2.140755"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:18.625475" elapsed="3.443112"/>
+</test>
+<test id="s1-s1-s2-t2" name="Check For Buttons" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:22.090587" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:22.089589" elapsed="1.258627"/>
+</kw>
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:23.374214" level="INFO">Current page contains button 'RANDOM'.</msg>
+<arg>RANDOM</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:23.348216" elapsed="0.026997"/>
+</kw>
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:23.399214" level="INFO">Current page contains button 'BROWSE'.</msg>
+<arg>BROWSE</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:23.376215" elapsed="0.023999"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:23.400214" elapsed="2.102269"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:22.075590" elapsed="3.426893"/>
+</test>
+<test id="s1-s1-s2-t3" name="Click On Random Button" line="20">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:25.521484" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:25.521484" elapsed="1.343832"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-12T11:47:07.960135" level="INFO">Clicking button 'r1'.</msg>
+<msg time="2026-01-12T12:05:26.866315" level="INFO">Clicking button 'RANDOM'.</msg>
+<arg>locator=RANDOM</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:26.865316" elapsed="0.140000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Can't decide? Let Recipe Seeker choose for you!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:27.005316" elapsed="0.035000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:27.040316" elapsed="2.123880"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:25.509484" elapsed="3.654712"/>
+</test>
+<test id="s1-s1-s2-t4" name="Click on Browse Button" line="26">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:29.199196" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:29.198199" elapsed="1.267273"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:30.467473" level="INFO">Clicking button 'BROWSE'.</msg>
+<arg>locator=BROWSE</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:30.466472" elapsed="0.130006"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Browse recipes by category</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:30.597472" elapsed="0.220613"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:30.819085" elapsed="2.106378"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:29.179197" elapsed="3.746266"/>
+</test>
+<status status="PASS" start="2026-01-12T12:05:18.619478" elapsed="14.320987"/>
+</suite>
+<suite id="s1-s1-s3" name="Navbar" source="C:\Users\35845\Desktop\recipe-seeker-2\tests\navbar.robot">
+<test id="s1-s1-s3-t1" name="Check that 'randomizer' page contains navbar" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:32.962466" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:32.961465" elapsed="1.292235"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:34.254701" level="INFO">Clicking button 'RANDOM'.</msg>
+<arg>RANDOM</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:34.253700" elapsed="0.124000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:34.396702" level="INFO">Current page contains element 'navbar'.</msg>
+<arg>navbar</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:34.378704" elapsed="0.018998"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:34.398700" elapsed="2.095761"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:32.951464" elapsed="3.542997"/>
+</test>
+<test id="s1-s1-s3-t2" name="Check that 'browse' page contains navbar" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:36.515460" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:36.514462" elapsed="1.274390"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:37.790852" level="INFO">Clicking button 'BROWSE'.</msg>
+<arg>BROWSE</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:37.789855" elapsed="0.135998"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Browse recipes by category</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:37.925853" elapsed="0.217148"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:38.153998" level="INFO">Current page contains element 'navbar'.</msg>
+<arg>navbar</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:38.143001" elapsed="0.011999"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:38.155000" elapsed="2.119090"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:36.501462" elapsed="3.772628"/>
+</test>
+<test id="s1-s1-s3-t3" name="Navbar button 'RANDOM' takes to randomizer" line="22">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:40.301095" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:40.301095" elapsed="1.280143"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:41.582237" level="INFO">Clicking button 'BROWSE'.</msg>
+<arg>BROWSE</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:41.581238" elapsed="0.131002"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>navbar</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:41.713238" elapsed="0.019999"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:41.734238" level="INFO">Clicking button 'RANDOM'.</msg>
+<arg>RANDOM</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:41.734238" elapsed="0.064000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Can't decide? Let Recipe Seeker choose for you!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:41.799239" elapsed="0.022002"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:41.821241" elapsed="2.119204"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:40.290097" elapsed="3.650348"/>
+</test>
+<test id="s1-s1-s3-t4" name="Navbar button 'BROWSE' takes to randomizer" line="30">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:43.960448" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:43.960448" elapsed="1.258466"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:45.219915" level="INFO">Clicking button 'RANDOM'.</msg>
+<arg>RANDOM</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:45.218914" elapsed="0.143001"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>navbar</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:45.362914" elapsed="0.017002"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:45.380915" level="INFO">Clicking button 'BROWSE'.</msg>
+<arg>BROWSE</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:45.379916" elapsed="0.066997"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Browse recipes by category</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:45.447914" elapsed="0.291664"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:45.740576" elapsed="2.118623"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:43.947446" elapsed="3.911753"/>
+</test>
+<status status="PASS" start="2026-01-12T12:05:32.943464" elapsed="14.924738"/>
+</suite>
+<suite id="s1-s1-s4" name="Randomrecipe" source="C:\Users\35845\Desktop\recipe-seeker-2\tests\randomrecipe.robot">
+<test id="s1-s1-s4-t1" name="Check For Dropdown List" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:47.908202" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/randomizer'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:47.907204" elapsed="1.332836"/>
+</kw>
+<kw name="Page Should Contain List" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:49.253041" level="INFO">Current page contains list 'categoryDropdown'.</msg>
+<arg>categoryDropdown</arg>
+<doc>Verifies selection list ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:49.241041" elapsed="0.012999"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:49.254040" elapsed="2.131332"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:47.892202" elapsed="3.493170"/>
+</test>
+<test id="s1-s1-s4-t2" name="Choose Category From Dropdown List" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:51.415379" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/randomizer'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:51.415379" elapsed="1.345561"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>locator=categoryDropdown</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:52.760940" elapsed="0.014000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:52.775940" level="INFO">Clicking element 'categoryDropdown'.</msg>
+<arg>locator=categoryDropdown</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:52.774940" elapsed="0.079002"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:52.855939" level="INFO">Selecting options from selection list 'categoryDropdown' by index 1.</msg>
+<arg>categoryDropdown</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2026-01-12T12:05:52.854942" elapsed="0.096999"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:52.953939" level="INFO">Clicking element 'categoryDropdown'.</msg>
+<arg>locator=categoryDropdown</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:05:52.952939" elapsed="0.080002"/>
+</kw>
+<kw name="List Selection Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:53.033942" level="INFO">Verifying list 'categoryDropdown' has option [ Chicken ] selected.</msg>
+<msg time="2026-01-12T12:05:53.039939" level="INFO">Current page contains list 'categoryDropdown'.</msg>
+<arg>categoryDropdown</arg>
+<arg>Chicken</arg>
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<status status="PASS" start="2026-01-12T12:05:53.032941" elapsed="0.100000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:53.132941" elapsed="2.106826"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:51.400379" elapsed="3.839388"/>
+</test>
+<test id="s1-s1-s4-t3" name="Check For Button" line="23">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:55.263767" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/randomizer'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:55.262768" elapsed="1.324587"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>locator=randomizerButton</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:56.588354" elapsed="0.012000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:05:56.601356" elapsed="2.100629"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:05:55.246768" elapsed="3.455217"/>
+</test>
+<status status="PASS" start="2026-01-12T12:05:47.883203" elapsed="10.825782"/>
+</suite>
+<suite id="s1-s1-s5" name="Recipe" source="C:\Users\35845\Desktop\recipe-seeker-2\tests\recipe.robot">
+<test id="s1-s1-s5-t1" name="Recipe opens" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:05:58.736986" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories/Beef'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:05:58.735986" elapsed="1.256208"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Beef recipes</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:05:59.993193" elapsed="0.230826"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:00.225020" level="INFO">Clicking button 'r1'.</msg>
 <arg>locator=r1</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-12T11:47:07.959133" elapsed="0.087002"/>
+<status status="PASS" start="2026-01-12T12:06:00.224019" elapsed="0.077999"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Ingredients</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-01-12T11:47:08.047133" elapsed="0.220713"/>
+<status status="PASS" start="2026-01-12T12:06:00.303019" elapsed="0.227018"/>
 </kw>
-<kw name="Page Should Contain Image" owner="SeleniumLibrary">
-<msg time="2026-01-12T11:47:08.278848" level="INFO">Current page contains image 'img1'.</msg>
-<arg>img1</arg>
-<doc>Verifies image identified by ``locator`` is found from current page.</doc>
-<status status="PASS" start="2026-01-12T11:47:08.267846" elapsed="0.011002"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-12T12:06:02.541066" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-12T12:06:00.531038" elapsed="2.010028"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-12T11:47:08.279849" elapsed="2.117061"/>
+<status status="PASS" start="2026-01-12T12:06:02.542068" elapsed="2.115640"/>
 </kw>
-<status status="PASS" start="2026-01-12T11:47:06.356062" elapsed="4.041849"/>
+<status status="PASS" start="2026-01-12T12:05:58.728985" elapsed="5.928723"/>
 </test>
-<status status="PASS" start="2026-01-12T11:47:06.067062" elapsed="4.345852"/>
+<test id="s1-s1-s5-t2" name="Page contains link to categorylist" line="18">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:04.680711" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories/Beef'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:06:04.680711" elapsed="1.346914"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Beef recipes</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:06.028624" elapsed="0.230871"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:06.260494" level="INFO">Clicking button 'r1'.</msg>
+<arg>locator=r1</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:06:06.260494" elapsed="0.084999"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ingredients</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:06.346494" elapsed="0.219966"/>
+</kw>
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:06.577463" level="INFO">Current page contains link 'Beef'.</msg>
+<arg>Beef</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:06.567460" elapsed="0.011001"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:06:06.578461" elapsed="2.115051"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:06:04.664711" elapsed="4.029800"/>
+</test>
+<test id="s1-s1-s5-t3" name="Categorylist opens when link is clicked" line="26">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:08.719512" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories/Beef'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:06:08.718513" elapsed="1.259831"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Beef recipes</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:09.979344" elapsed="0.225999"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:10.206345" level="INFO">Clicking button 'r1'.</msg>
+<arg>locator=r1</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:06:10.206345" elapsed="0.084999"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ingredients</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:10.292345" elapsed="0.220000"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:10.514346" level="INFO">Clicking link 'Beef'.</msg>
+<arg>Beef</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:06:10.513344" elapsed="0.061000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Beef recipes</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:10.574344" elapsed="0.213141"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:06:10.788486" elapsed="2.113979"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:06:08.701511" elapsed="4.200954"/>
+</test>
+<test id="s1-s1-s5-t4" name="Page contains image" line="35">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:12.927466" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories/Beef'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:06:12.926465" elapsed="1.249485"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Beef recipes</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:14.176949" elapsed="0.233346"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:14.412293" level="INFO">Clicking button 'r1'.</msg>
+<arg>locator=r1</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:06:14.411295" elapsed="0.081999"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ingredients</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:14.494294" elapsed="0.215016"/>
+</kw>
+<kw name="Page Should Contain Image" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:14.720308" level="INFO">Current page contains image 'img1'.</msg>
+<arg>img1</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:14.710309" elapsed="0.011000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:06:14.722309" elapsed="2.102359"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:06:12.910467" elapsed="3.914201"/>
+</test>
+<test id="s1-s1-s5-t5" name="Page contains list of ingredients" line="43">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:16.847671" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories/Beef'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:06:16.846668" elapsed="1.328865"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Beef recipes</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:18.176532" elapsed="0.230001"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:18.407534" level="INFO">Clicking button 'r1'.</msg>
+<arg>locator=r1</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:06:18.406533" elapsed="0.082000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ingredients</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:18.488533" elapsed="0.226396"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:18.722927" level="INFO">Current page contains element 'ingredientList'.</msg>
+<arg>ingredientList</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:18.714929" elapsed="0.007998"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:06:18.723929" elapsed="2.116598"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:06:16.831669" elapsed="4.008858"/>
+</test>
+<test id="s1-s1-s5-t6" name="Page should contain instructions" line="51">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:20.862523" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/categories/Beef'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-12T12:06:20.861526" elapsed="1.275082"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Beef recipes</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:22.137608" elapsed="0.223101"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:22.362708" level="INFO">Clicking button 'r1'.</msg>
+<arg>locator=r1</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-12T12:06:22.361708" elapsed="0.082000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Instructions</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:22.443708" elapsed="0.220922"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-12T12:06:22.673634" level="INFO">Current page contains element 'recipeInstructions'.</msg>
+<arg>recipeInstructions</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-12T12:06:22.665631" elapsed="0.008003"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-12T12:06:22.674631" elapsed="2.137862"/>
+</kw>
+<status status="PASS" start="2026-01-12T12:06:20.847524" elapsed="3.964969"/>
+</test>
+<status status="PASS" start="2026-01-12T12:05:58.719987" elapsed="26.099506"/>
 </suite>
-<status status="PASS" start="2026-01-12T11:47:06.018064" elapsed="4.398849"/>
+<status status="PASS" start="2026-01-12T12:05:06.969425" elapsed="77.863066"/>
 </suite>
-<status status="PASS" start="2026-01-12T11:47:05.960065" elapsed="4.464848"/>
+<status status="PASS" start="2026-01-12T12:05:06.844271" elapsed="77.996223"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="20" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Recipe-Seeker-2" id="s1" pass="1" fail="0" skip="0">Recipe-Seeker-2</stat>
-<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Recipe-Seeker-2.Tests</stat>
-<stat name="Recipe" id="s1-s1-s1" pass="1" fail="0" skip="0">Recipe-Seeker-2.Tests.Recipe</stat>
+<stat name="Recipe-Seeker-2" id="s1" pass="20" fail="0" skip="0">Recipe-Seeker-2</stat>
+<stat name="Tests" id="s1-s1" pass="20" fail="0" skip="0">Recipe-Seeker-2.Tests</stat>
+<stat name="Browse" id="s1-s1-s1" pass="3" fail="0" skip="0">Recipe-Seeker-2.Tests.Browse</stat>
+<stat name="Frontpage" id="s1-s1-s2" pass="4" fail="0" skip="0">Recipe-Seeker-2.Tests.Frontpage</stat>
+<stat name="Navbar" id="s1-s1-s3" pass="4" fail="0" skip="0">Recipe-Seeker-2.Tests.Navbar</stat>
+<stat name="Randomrecipe" id="s1-s1-s4" pass="3" fail="0" skip="0">Recipe-Seeker-2.Tests.Randomrecipe</stat>
+<stat name="Recipe" id="s1-s1-s5" pass="6" fail="0" skip="0">Recipe-Seeker-2.Tests.Recipe</stat>
 </suite>
 </statistics>
 <errors>

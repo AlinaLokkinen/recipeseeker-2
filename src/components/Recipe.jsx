@@ -57,21 +57,32 @@ const Recipe = () => {
               <div className="m-15 lg:m-30 font-playfair">
                 <div key={rec.idMeal} className="mb-10">
                   <h1 className="text-2xl lg:text-6xl mb-5">{rec.strMeal}</h1>
-                  <Link to={`/categories/${rec.strCategory}`}
-                  className=" lg:text-xl underline">
-                  {rec.strCategory}
+                  <Link
+                    to={`/categories/${rec.strCategory}`}
+                    className=" lg:text-xl underline"
+                  >
+                    {rec.strCategory}
                   </Link>
                 </div>
                 <div className="lg:flex lg:justify-evenly">
                   <div className="lg:w-1/4 mb-10">
                     <h2 className="text-lg lg:text-3xl mb-5 ">Ingredients</h2>
-                    {ingredients.map((ingr, i) => {
-                      return <li key={i} className="list-none mb-2 lg:m-2 text-sm lg:text-lg">{ingr}</li>;
-                    })}
+                    <ul id="ingredientList">
+                      {ingredients.map((ingr, i) => {
+                        return (
+                          <li
+                            key={i}
+                            className="list-none mb-2 lg:m-2 text-sm lg:text-lg"
+                          >
+                            {ingr}
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                   <div>
                     <img
-                      id={`img${id+1}`}
+                      id={`img${id + 1}`}
                       src={rec.strMealThumb}
                       alt={`A picture of ${rec.strMeal}`}
                       className="h-60 lg:h-120 rounded-xl"
@@ -82,7 +93,7 @@ const Recipe = () => {
                   <h2 className="text-lg lg:text-3xl mt-15 mb-5 text-center">
                     Instructions
                   </h2>
-                  <div>
+                  <div id="recipeInstructions">
                     {rec.strInstructions.split("\r\n").map((rivi, i) => {
                       return (
                         <span key={i} className="text-md lg:text-lg">
@@ -93,8 +104,10 @@ const Recipe = () => {
                       );
                     })}
                   </div>
-                  {rec.strYoutube && ( 
-                    <a href={rec.strYoutube} className="underline">Check out the instructions in video form!</a>
+                  {rec.strYoutube && (
+                    <a href={rec.strYoutube} className="underline">
+                      Check out the instructions in video form!
+                    </a>
                   )}
                 </div>
               </div>
