@@ -39,10 +39,11 @@ const Recipelist = () => {
               <h2 className="text-2xl lg:text-3xl m-5 font-semibold">{name} recipes</h2>
             </div>
             <div className="grid lg:grid-cols-2 ">
-            {recipes.map((rec) => {
+            {recipes.map((rec, i) => {
           return (
             <div key={rec.idMeal} className=" lg:mt-15">
               <button 
+                id={`r${i+1}`}
                 className="flex m-5 gap-4 lg:gap-8"
                 onClick={() => navigate(`/recipe/${rec.idMeal}`)}>
                 <img

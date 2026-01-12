@@ -35,7 +35,7 @@ const Categorylist = () => {
           <div>
             <h1 className="text-xl md:text-2xl lg:text-3xl">Browse recipes by category</h1>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div id="categoryList" className="grid grid-cols-1 lg:grid-cols-2">
             {categoryInfo.map((c) => {
               return (
                 <div key={c.idCategory} className="mt-15 lg:mt-20">

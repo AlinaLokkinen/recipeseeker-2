@@ -52,7 +52,7 @@ const Recipe = () => {
         <p>Loading...</p>
       ) : (
         <div>
-          {recipe.map((rec) => {
+          {recipe.map((rec, id) => {
             return (
               <div className="m-15 lg:m-30 font-playfair">
                 <div key={rec.idMeal} className="mb-10">
@@ -71,8 +71,9 @@ const Recipe = () => {
                   </div>
                   <div>
                     <img
+                      id={`img${id+1}`}
                       src={rec.strMealThumb}
-                      alt="A picture of a meal"
+                      alt={`A picture of ${rec.strMeal}`}
                       className="h-60 lg:h-120 rounded-xl"
                     />
                   </div>
